@@ -5,10 +5,11 @@ const cors = require('cors')
 const axios = require('axios');
 const { response } = require('express');
 
+const port = process.env.PORT || 80
 require('dotenv').config()
 const corsOptions = {
     exposedHeaders: 'Authorization',
-  };
+};
 app.use(cors(corsOptions));
 app.use(bodyParser.json())
 app.set('view engine', 'ejs')
@@ -30,18 +31,18 @@ app.get('/payment/:order_id', (req, res) => {
 
 app.get('/confirmation', (req, res) => {
 
-    axios.get(`${process.env.KLARNA_API_ENDPOINT}/checkout/v3/orders/${req.query.klarna_order_id}`,{
+    axios.get(`${process.env.KLARNA_API_ENDPOINT}/checkout/v3/orders/${req.query.klarna_order_id}`, {
         headers: {
-          Authorization: token
+            Authorization: token
         }
-      })
+    })
         .then(function (response) {
-            res.render('confirmation', {data: response.data.html_snippet})
+            res.render('confirmation', { data: response.data.html_snippet })
         })
         .catch(function (error) {
             console.log(error);
             res.send({ status: "error" })
-        }); 
+        });
 })
 
 app.post('/payment', (req, res) => {
@@ -59,8 +60,8 @@ app.post('/payment', (req, res) => {
         })
         .catch(function (error) {
             res.send({ status: "error" })
-        }); 
+        });
 });
 
 
-app.listen(3000, () => console.log('listening at 3000'));
+app.listen(port, () => console.log(`listening at ${port}`));
