@@ -5,7 +5,7 @@ const cors = require('cors')
 const axios = require('axios');
 const { response } = require('express');
 
-const port = process.env.PORT || 80
+const port = process.env.PORT || 3000
 require('dotenv').config()
 const corsOptions = {
     exposedHeaders: 'Authorization',
