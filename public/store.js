@@ -29,7 +29,7 @@ function ready() {
 
 function purchaseClicked() {
     const data = document.querySelector('.btn-purchase').getAttribute('data-order')
-    fetch('http://localhost:3000/payment', {
+    fetch('/payment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function purchaseClicked() {
                 cartItems.removeChild(cartItems.firstChild)
             }
             updateCartTotal()
-            window.open(`http://localhost:3000/payment/${data.order_id}`);
+            window.open(`/payment/${data.order_id}`);
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -126,7 +126,7 @@ function modifyOrderPayload (orderData) {
         "merchant_urls": {
             "terms": "https://www.example.com/terms.html",
             "checkout": "https://www.example.com/checkout.html",
-            "confirmation": "http://localhost:3000/confirmation?klarna_order_id={checkout.order.id}",
+            "confirmation": "/confirmation?klarna_order_id={checkout.order.id}",
             "push": "https://www.example.com/api/push"
         }
     }
