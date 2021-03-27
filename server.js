@@ -5,7 +5,7 @@ const cors = require('cors')
 const axios = require('axios');
 const { response } = require('express');
 
-const port = PORT || 3000
+const port = process.env.PORT || 3000
 require('dotenv').config()
 const corsOptions = {
     exposedHeaders: 'Authorization',
@@ -60,6 +60,7 @@ app.post('/payment', (req, res) => {
     })
         .then(function (response) {
             localDB.push(response.data)
+            console.log("Data", response.data);
             token = 'Basic' + response['request']['_header'].split("Basic")[1].split("==")[0] + '=='
             res.send({ status: "success", order_id: response.data.order_id })
         })
