@@ -124,10 +124,10 @@ function modifyOrderPayload (orderData) {
         "order_tax_amount": 0,
         "order_lines": modifiedItems,
         "merchant_urls": {
-            "terms": "https://www.example.com/terms.html",
-            "checkout": "https://www.example.com/checkout.html",
-            "confirmation": "/confirmation?klarna_order_id={checkout.order.id}",
-            "push": "https://www.example.com/api/push"
+            "terms": "https://twebcast.herokuapp.com/terms.html",
+            "checkout": "https://twebcast.herokuapp.com/checkout.html",
+            "confirmation": "https://twebcast.herokuapp.com/confirmation?klarna_order_id={checkout.order.id}",
+            "push": "https://twebcast.herokuapp.com/api/push"
         }
     }
     document.querySelector('.btn-purchase').setAttribute('data-order' , JSON.stringify(payload));
