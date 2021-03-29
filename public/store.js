@@ -124,8 +124,8 @@ function modifyOrderPayload (orderData) {
         "order_tax_amount": 0,
         "order_lines": modifiedItems,
         "merchant_urls": {
-            "terms": "https://twebcast.herokuapp.com/terms.html",
-            "checkout": "https://twebcast.herokuapp.com/checkout.html",
+            "terms": "https://tweakcast.herokuapp.com/terms.html",
+            "checkout": "https://tweakcast.herokuapp.com/checkout.html",
             "confirmation": "https://tweakcast.herokuapp.com/confirmation?klarna_order_id={checkout.order.id}",
             "push": "https://tweakcast.herokuapp.com/api/push"
         }
