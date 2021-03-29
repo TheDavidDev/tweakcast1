@@ -117,17 +117,17 @@ function modifyOrderPayload (orderData) {
         }
     })
     const payload = {
-        "purchase_country": "GB",
-        "purchase_currency": "GBP",
-        "locale": "en-GB",
+        "purchase_country": "SW",
+        "purchase_currency": "SEK",
+        "locale": "en-SW",
         "order_amount": orderData.total * 100,
         "order_tax_amount": 0,
         "order_lines": modifiedItems,
         "merchant_urls": {
             "terms": "https://twebcast.herokuapp.com/terms.html",
             "checkout": "https://twebcast.herokuapp.com/checkout.html",
-            "confirmation": "https://twebcast.herokuapp.com/confirmation?klarna_order_id={checkout.order.id}",
-            "push": "https://twebcast.herokuapp.com/api/push"
+            "confirmation": "https://tweakcast.herokuapp.com/confirmation?klarna_order_id={checkout.order.id}",
+            "push": "https://tweakcast.herokuapp.com/api/push"
         }
     }
     document.querySelector('.btn-purchase').setAttribute('data-order' , JSON.stringify(payload));
