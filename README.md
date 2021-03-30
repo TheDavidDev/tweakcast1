@@ -6,7 +6,7 @@ With intention to become an extension to the Twebcast web service, this is a pay
 
 ### [Live Site](https://tweakcast.herokuapp.com/)
 
-![Klarna Checkcou implementation](![klarnaCO!](https://user-images.githubusercontent.com/51863978/112983255-c2bbb680-915d-11eb-89f7-0465b44c2d25.png))
+![Klarna Checkcou implementation](![klarnaCO!](https://user-images.githubusercontent.com/51863978/112983255-c2bbb680-915d-11eb-89f7-0465b44c2d25.png)
 
 
 Setup:
