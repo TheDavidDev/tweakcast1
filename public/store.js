@@ -156,5 +156,5 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     orderData.total = total
     modifyOrderPayload (orderData)
-    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+    document.getElementsByClassName('cart-total-price')[0].innerText = 'Sek' + total
 }
