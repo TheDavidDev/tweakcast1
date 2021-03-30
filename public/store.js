@@ -117,7 +117,7 @@ function modifyOrderPayload (orderData) {
         }
     })
     const payload = {
-        "purchase_country": "SW",
+        "purchase_country": "SE",
         "purchase_currency": "SEK",
         "locale": "en-SW",
         "order_amount": orderData.total * 100,
